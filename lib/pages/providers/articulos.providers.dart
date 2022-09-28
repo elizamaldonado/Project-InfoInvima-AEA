@@ -6,14 +6,14 @@ import 'package:http/http.dart' as http;
 import 'package:newnoticias/models/articulo.models.dart';
 
 class ArticuloProvider {
-  Future<List<ArticuloModel>> obtenerArticulos() async {
+  Future<List<ArticuloModel>> obtenerArticulos(String q) async {
     List<ArticuloModel> articulos = [];
     var client = http.Client();
     try {
       Map<String, String> parametros = {
-        'q': 'tesla',
-        'from': '2022-08-17',
-        'sortBy': 'publishedAt',
+        'q': q,
+        'from': '2022-09-26',
+        'sortBy': 'popularity',
         'apiKey': '3245b9a7594d47e7ba7746344d47fbb4',
       };
       var response = await client
