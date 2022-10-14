@@ -14,14 +14,13 @@ class ArticuloProvider {
           'query': 'select * limit 100'
        };
       //var response = await client.get(Uri.https('newsapi.org', '/v2/everything', parametros));
-      var response = await client.get(Uri.https('datos.gov.co', '/resource/i7cb-raxc.json', parametros));
+      var response = await client.get(Uri.https('datos.gov.co', '/resource/i7cb-raxc.json'));
       print("termino la peticion");
-      var decodedResponse =
-          jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
-
-      decodedResponse['articles']
-          .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
       print(response.body);
+      var decodedResponse =
+          jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>;
+      decodedResponse
+          .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
       return articulos;
     } finally {
       client.close();
