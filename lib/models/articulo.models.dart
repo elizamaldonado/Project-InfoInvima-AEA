@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
 
 class ArticuloModel {
-  String author;
-  String title;
+  String producto;
+  String empresa;
+  String registrosanitario;
+  String fechaexp;
+  String fechavenc;
+  String estado;
   String descripcion;
-  String url;
-  String urlToImage;
-  String publishedAt;
-  String content;
+  String viaadministracion;
+  String formaf;
 
   ArticuloModel({
-    required this.author,
-    required this.title,
+    required this.producto,
+    required this.empresa,
+    required this.registrosanitario,
+    required this.fechaexp,
+    required this.fechavenc,
+    required this.estado,
     required this.descripcion,
-    required this.url,
-    required this.urlToImage,
-    required this.publishedAt,
-    required this.content,
+    required this.viaadministracion,
+    required this.formaf,
   });
   factory ArticuloModel.fromJson(Map<String, dynamic> json) => ArticuloModel(
-        author: json["author"] ?? '',
-        title: json["title"] ?? '',
-        descripcion: json["descripcion"] ?? '',
-        url: json["url"] ?? '',
-        urlToImage: json["urlToImage"] ?? '',
-        publishedAt: json["publishedAt"] ?? '',
-        content: json["content"] ?? '',
+        producto: json["producto"] ?? '',
+        empresa: json["titular"] ?? '',
+        registrosanitario: json["registrosanitario"] ?? '',
+        fechaexp: json["fechaexpedicion"] ?? '',
+        fechavenc: json["fechavencimiento"] ?? '',
+        estado: json["estadoregistro"] ?? '',
+        descripcion: json["descripcionatc"] ?? '',
+        viaadministracion: json["viaadministracion"] ?? '',
+        formaf: json["formafarmaceutica"] ?? '',
       );
 }

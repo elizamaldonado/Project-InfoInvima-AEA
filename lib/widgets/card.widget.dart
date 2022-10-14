@@ -24,9 +24,6 @@ class CardWidget extends StatelessWidget {
         },
         child: Row(children: <Widget>[
           Expanded(
-            child: Image.network(articulo.urlToImage),
-          ),
-          Expanded(
             flex: 1,
             child: Padding(
               padding: const EdgeInsets.only(left: 16.0),
@@ -35,21 +32,21 @@ class CardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    articulo.title,
+                    articulo.producto,
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   Text(
-                    articulo.author,
+                    articulo.empresa,
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w800,
                     ),
                   ),
                   Text(
-                    articulo.publishedAt,
+                    articulo.registrosanitario,
                     style: TextStyle(
                       fontSize: 12.0,
                       fontWeight: FontWeight.w800,

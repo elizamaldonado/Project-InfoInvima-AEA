@@ -11,20 +11,17 @@ class ArticuloProvider {
     var client = http.Client();
     try {
       Map<String, String> parametros = {
-        'q': q,
-        'from': '2022-09-26',
-        'sortBy': 'popularity',
-        'apiKey': '3245b9a7594d47e7ba7746344d47fbb4',
-      };
-      var response = await client
-          .get(Uri.https('newsapi.org', '/v2/everything', parametros));
-
+          'query': 'select * limit 100'
+       };
+      //var response = await client.get(Uri.https('newsapi.org', '/v2/everything', parametros));
+      var response = await client.get(Uri.https('datos.gov.co', '/resource/i7cb-raxc.json', parametros));
+      print("termino la peticion");
       var decodedResponse =
           jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
 
       decodedResponse['articles']
           .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
-      //print(response.body);
+      print(response.body);
       return articulos;
     } finally {
       client.close();

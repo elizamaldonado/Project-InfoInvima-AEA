@@ -14,7 +14,7 @@ class DetallePage extends StatelessWidget {
         appBar: AppBar(
             title: Text(
           textAlign: TextAlign.left,
-          articulo.title,
+          articulo.producto,
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -28,21 +28,21 @@ class DetallePage extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                articulo.title,
+                articulo.producto,
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 12.0, fontFamily: 'RobotoMono'),
               ),
-              Image.network(articulo.urlToImage),
+              Image.network(articulo.descripcion),
               Text("\n"),
               Text(
-                articulo.content,
+                articulo.descripcion,
                 textAlign: TextAlign.justify,
                 style: TextStyle(fontSize: 12.0, fontFamily: 'RobotoMono'),
               ),
               Divider(),
               Text("\n"),
               Text(
-                articulo.author,
+                articulo.empresa,
                 textAlign: TextAlign.left,
                 style: TextStyle(
                     fontSize: 12.0,
@@ -51,7 +51,7 @@ class DetallePage extends StatelessWidget {
               ),
               Text("\n"),
               Text(
-                articulo.publishedAt,
+                articulo.fechaexp,
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   fontSize: 12.0,
