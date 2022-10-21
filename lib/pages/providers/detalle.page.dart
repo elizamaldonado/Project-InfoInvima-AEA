@@ -32,7 +32,6 @@ class DetallePage extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(fontSize: 12.0, fontFamily: 'RobotoMono'),
               ),
-              Image.network(articulo.descripcion),
               Text("\n"),
               Text(
                 articulo.descripcion,
