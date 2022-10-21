@@ -37,6 +37,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   http: ^0.13.5
+  intro_views_flutter: ^3.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -58,7 +59,17 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
+  
+  assets:
+   - assets/air-hostess.png
+   - assets/logo.png
+   - assets/airplane.png
+   - assets/bus-driver.png
+   - assets/bus.png
+   - assets/hotel.png
+   - assets/taxi.png
+   - assets/taxi-driver.png
+   - assets/waiter.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -28,33 +28,142 @@ class DetallePage extends StatelessWidget {
           child: Column(
             children: [
               Text(
+                "Producto \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
                 articulo.producto,
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 12.0, fontFamily: 'RobotoMono'),
-              ),
-              Image.network(articulo.descripcion),
-              Text("\n"),
-              Text(
-                articulo.descripcion,
-                textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 12.0, fontFamily: 'RobotoMono'),
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
               ),
               Divider(),
-              Text("\n"),
               Text(
-                articulo.empresa,
+                "Descripción \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.descripcion,
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                    fontSize: 12.0,
+                  fontSize: 12.0,
+                  fontFamily: 'RobotoMono',
+                ),
+              ),
+              Divider(),
+              Text(
+                "Empresa \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.empresa,
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 14.0, fontFamily: 'RobotoMono'),
+              ),
+              Divider(),
+              Text(
+                "Registro Sanitario \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.registrosanitario,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                    fontSize: 15.0,
                     fontFamily: 'RobotoMono',
                     fontStyle: FontStyle.normal),
               ),
-              Text("\n"),
+              Divider(),
+              Text(
+                "Fecha Expedición \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
               Text(
                 articulo.fechaexp,
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                  fontSize: 12.0,
+                  fontSize: 15.0,
+                  fontFamily: 'RobotoMono',
+                ),
+              ),
+              Divider(),
+              Text(
+                "Fecha Vencimiento \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.fechavenc,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'RobotoMono',
+                ),
+              ),
+              Divider(),
+              Text(
+                "Estado Producto \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.estado,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'RobotoMono',
+                ),
+              ),
+              Divider(),
+              Text(
+                "Via Administración \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.viaadministracion,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 15.0,
+                  fontFamily: 'RobotoMono',
+                ),
+              ),
+              Divider(),
+              Text(
+                "Forma Producto \n",
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontFamily: 'RobotoMono',
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                articulo.formaf,
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  fontSize: 15.0,
                   fontFamily: 'RobotoMono',
                 ),
               ),

@@ -29,7 +29,7 @@ class ArticuloModel {
         fechaexp: json["fechaexpedicion"] ?? '',
         fechavenc: json["fechavencimiento"] ?? '',
         estado: json["estadoregistro"] ?? '',
-        descripcion: json["descripcionatc"] ?? '',
+        descripcion: json["descripcioncomercial"] ?? '',
         viaadministracion: json["viaadministracion"] ?? '',
         formaf: json["formafarmaceutica"] ?? '',
       );
