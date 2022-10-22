@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Noticias",
+          "Medicamentos aprobados por INVIMA",
           style: TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.white,
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
             lista.add(
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-                child: TextField(
+                /*child: TextField(
                   controller: searchController,
                   decoration: InputDecoration(
                     labelText: 'Ingrese la noticia a buscar',
@@ -58,9 +58,10 @@ class _HomePageState extends State<HomePage> {
                       fontSize: 12.0,
                     ),
                   ),
-                ),
+                ),*/
               ),
             );
+            /*
             lista.add(
               Padding(
                 padding: const EdgeInsets.fromLTRB(50, 10, 50, 10),
@@ -75,6 +76,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             );
+            */
             snapshot.data?.forEach((element) => lista.add(CardWidget(
                   articulo: element,
                 )));
