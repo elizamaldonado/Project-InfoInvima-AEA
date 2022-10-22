@@ -10,56 +10,15 @@ class ArticuloProvider {
     List<ArticuloModel> articulos = [];
     var client = http.Client();
     try {
+      Map<String, String> parametros = {
+          'query': 'select * limit 100'
+       };
+      //var response = await client.get(Uri.https('newsapi.org', '/v2/everything', parametros));
       var response = await client.get(Uri.https('datos.gov.co', '/resource/i7cb-raxc.json'));
       print("termino la peticion");
-      //print(response.body);
+      print(response.body);
       var decodedResponse =
           jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>;
-      decodedResponse
-          .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
-      return articulos;
-    } finally {
-      client.close();
-    }
-  }
-  Future<List<ArticuloModel>> filtrarArticulos(String nombre, String forma) async {
-    List<ArticuloModel> articulos = [];
-    var client = http.Client();
-    try {
-      var url ='https://datos.gov.co/';
-      var query = r'$query';
-      //and (upper(`formafarmaceutica`) = upper('$forma'))
-      var endpoint = "api/id/i7cb-raxc.json?$query=select *, :id where (contains(upper(`producto`), upper('$nombre')) and (upper(`formafarmaceutica`) = upper('$forma')) )";
-      var uri = Uri.parse(url + endpoint);
-      var response = await http.get(uri);
-      print("aqui el response");
-      print(response.statusCode);
-      
-      var decodedResponse =
-          jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>;
-      
-      decodedResponse
-          .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
-      return articulos;
-    } finally {
-      client.close();
-    }
-  }
-  Future<List<ArticuloModel>> filtrarforma(String forma) async {
-    List<ArticuloModel> articulos = [];
-    var client = http.Client();
-    try {
-      var url ='https://datos.gov.co/';
-      var query = r'$query';
-      var endpoint = "api/id/i7cb-raxc.json?formafarmaceutica='$forma'";
-      var uri = Uri.parse(url + endpoint);
-      var response = await http.get(uri);
-      print("aqui el response");
-      print(response.statusCode);
-      
-      var decodedResponse =
-          jsonDecode(utf8.decode(response.bodyBytes)) as List<dynamic>;
-      
       decodedResponse
           .forEach((item) => articulos.add(ArticuloModel.fromJson(item)));
       return articulos;
@@ -68,4 +27,3 @@ class ArticuloProvider {
     }
   }
 }
-//https://www.datos.gov.co/resource/i7cb-raxc.json?formafarmaceutica=AEROSOLES

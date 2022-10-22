@@ -8,35 +8,20 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-  
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  String nombre  = "crema";
-  var formaf = [
-    'CREMA TOPICA',
-    'CREMA VAGINAL',
-    'JARABE',
-    'TABLETA',
-    'CAPSULA DURA',
-    'SUSPENSION ORAL',  
-    'GEL TOPICO',
-    'TABLETA RECUBIERTA',
-    'POLVO ESTERIL PARA RECONSTITUIR A SOLUCION INYECTABLE',
-    'SOLUCION INYECTABLE',
-  ];
-  String forma = "TABLETA";
   final articuloProvider = ArticuloProvider();
   late Future<List<ArticuloModel>> articulos;
   late TextEditingController searchController;
 
   @override
   void initState() {
-    articulos = articuloProvider.obtenerArticulos('');
+    articulos = articuloProvider.obtenerArticulos('apple');
     super.initState();
-    
     searchController = TextEditingController();
   }
 
@@ -53,12 +38,10 @@ class _HomePageState extends State<HomePage> {
               fontSize: 14.0),
         ),
       ),
-      body:        
-          Container(
-            child: FutureBuilder(  
-              future: articulos,
-              builder: ((context, snapshot) {
-                List<Widget> lista = [];
+      body: FutureBuilder(
+        future: articulos,
+        builder: ((context, snapshot) {
+          List<Widget> lista = [];
 
           if (snapshot.hasData) {
             lista.add(
