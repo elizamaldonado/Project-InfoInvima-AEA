@@ -42,7 +42,6 @@ class DetallePage extends StatelessWidget {
                     fontFamily: 'RobotoMono',
                     fontWeight: FontWeight.bold),
               ),
-              Image.network(articulo.descripcion),
               Text("\n"),
               Text(
                 articulo.descripcion,
