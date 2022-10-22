@@ -42,14 +42,8 @@ class DetallePage extends StatelessWidget {
                     fontFamily: 'RobotoMono',
                     fontWeight: FontWeight.bold),
               ),
-              Divider(),
-              Text(
-                "Descripción \n",
-                style: TextStyle(
-                    fontSize: 18.0,
-                    fontFamily: 'RobotoMono',
-                    fontWeight: FontWeight.bold),
-              ),
+              Image.network(articulo.descripcion),
+              Text("\n"),
               Text(
                 articulo.descripcion,
                 textAlign: TextAlign.left,
